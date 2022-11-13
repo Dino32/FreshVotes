@@ -1,0 +1,14 @@
+freshVotes/.gitignore
+freshVotes/mvnw
+freshVotes/mvnw.cmd
+freshVotes/.mvn/wrapper/maven-wrapper.jar
+freshVotes/.mvn/wrapper/maven-wrapper.properties
+freshVotes/bin/.gitignore
+freshVotes/bin/mvnw
+freshVotes/bin/mvnw.cmd
+freshVotes/bin/pom.xml
+freshVotes/bin/.mvn/wrapper/maven-wrapper.jar
+freshVotes/bin/.mvn/wrapper/maven-wrapper.properties
+freshVotes/bin/src/main/java/com/fershVotes/FreshVotesApplication.class
+freshVotes/bin/src/test/java/com/fershVotes/FreshVotesApplicationTests.class
+freshVotes/bin/
