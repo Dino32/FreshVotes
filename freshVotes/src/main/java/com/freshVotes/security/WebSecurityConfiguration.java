@@ -27,13 +27,14 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
 	
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
-		http.csrf().disable()
+		http
 			.authorizeRequests()
 				.antMatchers("/").permitAll() // allows every user to see / root
 				.anyRequest().hasRole("USER") // fore any other request user needs to have USER role
 			.and()
 			.formLogin()
 				.loginPage("/login")
+				.defaultSuccessUrl("/dashboard")
 				.permitAll()
 			.and()
 			.logout()

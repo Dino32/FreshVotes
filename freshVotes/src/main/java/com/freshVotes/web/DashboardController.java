@@ -13,7 +13,7 @@ public class DashboardController {
 		return "index";
 	}
 	
-	@GetMapping(value = "/dashboard")
+	@GetMapping(value = "/dashboard") // same as requestMapping(value="/dashboard", method = RequestMethod.GET)
 	public String dashouard() {
 		return "dashboard";
 	}
