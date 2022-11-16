@@ -9,7 +9,7 @@ import javax.persistence.Table;
 @Table(name = "vote")
 public class Vote {
 
-	private VoteId pk; // primary key
+	private VoteId pk; // primary key for this table
 	private Boolean upvote;
 
 	public Boolean getUpvote() {

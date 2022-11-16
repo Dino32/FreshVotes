@@ -13,7 +13,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 
 @Configuration
 public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
-	@Lazy
+	@Lazy // this prevents circulation error
 	@Autowired
 	private UserDetailsService userDetailsService;
 	
@@ -38,12 +38,12 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
 	protected void configure(HttpSecurity http) throws Exception {
 		http
 			.authorizeRequests()
-				.antMatchers("/").permitAll() // allows every user to see / root
+				.antMatchers("/").permitAll() // allows every user to see / root (our welcome page)
 				.anyRequest().hasRole("USER") // fore any other request user needs to have USER role
 			.and()
 			.formLogin()
 				.loginPage("/login")
-				.defaultSuccessUrl("/dashboard")
+				.defaultSuccessUrl("/dashboard") // if user successfuly logged we send them to dashboard page
 				.permitAll()
 			.and()
 			.logout()

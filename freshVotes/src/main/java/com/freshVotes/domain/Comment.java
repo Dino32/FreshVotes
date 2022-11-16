@@ -9,7 +9,7 @@ import javax.persistence.Table;
 @Table(name = "comment")
 public class Comment {
 
-	private CommentId pk;
+	private CommentId pk; // primary key for this table
 	private String text;
 	
 	@EmbeddedId
