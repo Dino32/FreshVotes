@@ -26,12 +26,6 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
 		auth.userDetailsService(userDetailsService)
 			.passwordEncoder(getPasswordEncoder());
-		
-//		auth.inMemoryAuthentication()
-//			.passwordEncoder(getPasswordEncoder())
-//			.withUser("db53796@fer.hr")
-//			.password(getPasswordEncoder().encode("ujLG5xV4"))
-//			.roles("USER");
 	}
 	
 	@Override
@@ -39,6 +33,7 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
 		http
 			.authorizeRequests()
 				.antMatchers("/").permitAll() // allows every user to see / root (our welcome page)
+				.antMatchers("/register").permitAll()
 				.anyRequest().hasRole("USER") // fore any other request user needs to have USER role
 			.and()
 			.formLogin()
