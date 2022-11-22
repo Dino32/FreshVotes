@@ -19,7 +19,12 @@
 						<input type="text" class="form-control" th:field="${product.name}"/>
 					</div>
 				</div>
-				<div th:text="|Is the product published:  ${product.published}|"> <!-- this will dinamicaly change text of div -->
+				
+				<div class="form-check form-switch">
+				  <input class="form-check-input" type="checkbox" role="switch" value="" th:field="${product.published}">
+				  <label class="form-check-label" for="published1">
+				    Is published
+				  </label>
 				</div>
 				
 				<button type="submit" class="btn-primary btn btn-lg">Save Product</button>
