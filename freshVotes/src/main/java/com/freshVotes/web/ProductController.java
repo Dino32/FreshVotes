@@ -28,7 +28,7 @@ public class ProductController {
 	
 	@GetMapping("/products/{productId}")
 	public String getProduct(@PathVariable Long productId, ModelMap model, HttpServletResponse response) throws IOException{
-		Optional<Product> productOpt = productRepository.findById(productId);
+		Optional<Product> productOpt = productRepository.findByIdWithUser(productId);
 		
 		if (productOpt.isPresent()) {
 			Product product = productOpt.get();
@@ -57,6 +57,7 @@ public class ProductController {
 	@PostMapping("products/{productId}")
 	public String saveProduct(@PathVariable Long productId, Product product) {
 		productRepository.save(product);
+		System.out.println(product);
 		return "redirect:/products/" + product.getId();
 	}
 }
